@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BankAccountTests {
+public class BankAccountTest {
 
     @Test// with this annotation JUnit knows  that this is Test and will treat it as Test
     public void depositShouldAddMoney() {
