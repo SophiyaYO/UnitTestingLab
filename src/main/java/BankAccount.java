@@ -9,7 +9,7 @@ public class BankAccount {
     }
 
     public void deposit(double amount) {
-        this.money.add(amount - 1);
+        this.money.add(amount);
     }
 
     public double getBalance() {
