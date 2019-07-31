@@ -7,7 +7,7 @@ public class BankAccountTests {
     public void depositShouldAddMoney() {
         BankAccount account = new BankAccount();
         account.deposit(50);
-        Assert.assertTrue(account.getBalance() == 50);
+        Assert.assertEquals(50, account.getBalance(), 0.0);
     }
 
 }
