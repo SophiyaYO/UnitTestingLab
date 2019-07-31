@@ -16,9 +16,14 @@ public class DummyTests {
 
     }
 
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void dummyShouldThrowExceptionIfAttacked() {
-        //todo
+        Axe axe = new Axe(10, 10);
+        Dummy target = new Dummy(20,10);
+
+        axe.attack(target);
+        axe.attack(target);
+        axe.attack(target);
     }
 
     @Test
