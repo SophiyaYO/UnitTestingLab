@@ -28,6 +28,26 @@ public class DummyTests {
 
     @Test
     public void deadDummyXP() {
-        //todo
+        Axe axe = new Axe(10, 10);
+        Dummy target = new Dummy(20,10);
+
+        axe.attack(target);
+        axe.attack(target);
+
+        int actual = target.giveExperience();
+
+        Assert.assertEquals(10, actual);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void aliveDummyXP() {
+        Axe axe = new Axe(10, 10);
+        Dummy target = new Dummy(20,10);
+
+        axe.attack(target);
+
+        int actual = target.giveExperience();
+
+        Assert.assertEquals(10, actual);
     }
 }
