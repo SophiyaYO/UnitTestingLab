@@ -15,4 +15,14 @@ public class AxeTest {
         Assert.assertEquals(9, axe.getDurabilityPoints());
 
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void brokenWeaponAttack() {
+        Axe axe = new Axe(10, 1);
+        Dummy dummy = new Dummy(20,10);
+
+        axe.attack(dummy);
+        axe.attack(dummy);
+        axe.attack(dummy);
+    }
 }
