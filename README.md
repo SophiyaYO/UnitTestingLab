@@ -9,6 +9,8 @@ _Code will be in Java_
 
 _Unit Testing Framework is Maven Repository- Junit 4.12_
 
+**_:hand: You should know that :bank: BankAccount and BankAccountTest are created and used 
+by us. They are not included below._**
 ***************
 ----------
 
