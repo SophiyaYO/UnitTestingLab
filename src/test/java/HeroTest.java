@@ -32,7 +32,7 @@ public class HeroTest {
         Hero hero = new Hero(mockWeapon, HERO_NAME);
         hero.attack(mockTarget);
 
-        Assert.assertEquals(DEFAULT_EXPERIENCE, hero.getExperience())
+        Assert.assertEquals(DEFAULT_EXPERIENCE, hero.getExperience());
 
     }
 }
