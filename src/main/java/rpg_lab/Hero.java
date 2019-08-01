@@ -4,12 +4,13 @@ public class Hero {
 
     private String name;
     private int experience;
-    private Axe weapon;
+    private Weapon weapon;
 
-    public Hero(String name) {
+    public Hero(Weapon weapon, String name) {
         this.name = name;
         this.experience = 0;
         this.weapon = new Axe(10, 10);
+        this.weapon = weapon;
     }
 
     public String getName() {
@@ -20,7 +21,7 @@ public class Hero {
         return this.experience;
     }
 
-    public Axe getWeapon() {
+    public Weapon getWeapon() {
         return this.weapon;
     }
 
