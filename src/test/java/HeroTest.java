@@ -1,4 +1,6 @@
+import org.junit.Assert;
 import org.junit.Test;
+import rpg_lab.Hero;
 import rpg_lab.Target;
 import rpg_lab.Weapon;
 
@@ -9,6 +11,7 @@ public class HeroTest {
     private static final int DEFAULT_WEAPON_ATTACK_POINTS = 10;
     private static final int DEFAULT_WEAPON_DURABILITY_POINTS = 0;
     private static final boolean DEFAULT_IS_TARGET_DEAD = Boolean.TRUE;
+    private static final String HERO_NAME = "Stamatka";
 
     @Test
     public void stackGainsExperienceIfTargetIsDead() {
@@ -52,6 +55,9 @@ public class HeroTest {
             }
         };
 
+        Hero hero = new Hero(weapon, HERO_NAME);
 
+        hero.attack(target);
+        Assert.assertEquals(DEFAULT_EXPERIENCE, hero.getExperience());
     }
 }
