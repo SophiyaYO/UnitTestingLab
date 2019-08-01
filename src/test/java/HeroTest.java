@@ -21,50 +21,57 @@ public class HeroTest {
         Mockito.when(mockTarget.giveExperience()).thenReturn(10);
         Mockito.when(mockTarget.isDead()).thenReturn(Boolean.TRUE);
 
-        Weapon
+        Weapon mockWeapon = Mockito.mock(Weapon.class);
+        Mockito.when(mockWeapon.getAttackPoints())
+                .thenReturn(DEFAULT_WEAPON_ATTACK_POINTS);
+
+        Mockito.when(mockWeapon.getDurabilityPoints())
+                .thenReturn(DEFAULT_WEAPON_DURABILITY_POINTS);
 
         Target target = new Target() {
-            @Override
-            public int getHealth() {
-                return DEFAULT_TARGET_HEALTH;
-            }
 
-            @Override
-            public void takeAttack(int attackPoints) {
-
-            }
-
-            @Override
-            public int giveExperience() {
-                return DEFAULT_EXPERIENCE;
-            }
-
-            @Override
-            public boolean isDead() {
-                return DEFAULT_IS_TARGET_DEAD;
-            }
-        };
-
-        Weapon weapon = new Weapon() {
-            @Override
-            public int getAttackPoints() {
-                return DEFAULT_WEAPON_ATTACK_POINTS;
-            }
-
-            @Override
-            public int getDurabilityPoints() {
-                return DEFAULT_WEAPON_DURABILITY_POINTS;
-            }
-
-            @Override
-            public void attack(Target target) {
-
-            }
-        };
-
-        Hero hero = new Hero(weapon, HERO_NAME);
 
         hero.attack(target);
         Assert.assertEquals(DEFAULT_EXPERIENCE, hero.getExperience());
-    }
+
+
+        //            @Override
+//            public int getHealth() {
+//                return DEFAULT_TARGET_HEALTH;
+//            }
+//
+//            @Override
+//            public void takeAttack(int attackPoints) {
+//
+//            }
+//
+//            @Override
+//            public int giveExperience() {
+//                return DEFAULT_EXPERIENCE;
+//            }
+//
+//            @Override
+//            public boolean isDead() {
+//                return DEFAULT_IS_TARGET_DEAD;
+//            }
+//        };
+//
+//        Weapon weapon = new Weapon() {
+//            @Override
+//            public int getAttackPoints() {
+//                return DEFAULT_WEAPON_ATTACK_POINTS;
+//            }
+//
+//            @Override
+//            public int getDurabilityPoints() {
+//                return DEFAULT_WEAPON_DURABILITY_POINTS;
+//            }
+//
+//            @Override
+//            public void attack(Target target) {
+//
+//            }
+//        };
+            Hero hero = new Hero(weapon, HERO_NAME);
+        }
 }
