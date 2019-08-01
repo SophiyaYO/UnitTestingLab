@@ -1,15 +1,22 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import rpg_lab.Axe;
 import rpg_lab.Dummy;
 
 public class DummyTests {
 
+    private Dummy target;
+    private Axe axe;
+
+    @Before
+    public void initValues() {
+        this.target = new Dummy(20,10);
+        this.axe = new Axe(10, 10);
+    }
+
     @Test
     public void dummyShouldLosesHealthAttacked() {
-        Axe axe = new Axe(10, 10);
-        Dummy target = new Dummy(20,10);
-
         axe.attack(target);
 
         Assert.assertEquals(10, target.getHealth());
@@ -18,9 +25,6 @@ public class DummyTests {
 
     @Test(expected = IllegalStateException.class)
     public void dummyShouldThrowExceptionIfAttacked() {
-        Axe axe = new Axe(10, 10);
-        Dummy target = new Dummy(20,10);
-
         axe.attack(target);
         axe.attack(target);
         axe.attack(target);
@@ -28,9 +32,6 @@ public class DummyTests {
 
     @Test
     public void deadDummyXP() {
-        Axe axe = new Axe(10, 10);
-        Dummy target = new Dummy(20,10);
-
         axe.attack(target);
         axe.attack(target);
 
@@ -41,9 +42,6 @@ public class DummyTests {
 
     @Test(expected = IllegalStateException.class)
     public void aliveDummyXP() {
-        Axe axe = new Axe(10, 10);
-        Dummy target = new Dummy(20,10);
-
         axe.attack(target);
 
         int actual = target.giveExperience();
