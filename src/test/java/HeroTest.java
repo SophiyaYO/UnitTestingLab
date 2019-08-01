@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
 import rpg_lab.Hero;
 import rpg_lab.Target;
 import rpg_lab.Weapon;
@@ -15,6 +16,12 @@ public class HeroTest {
 
     @Test
     public void stackGainsExperienceIfTargetIsDead() {
+
+        Target mockTarget = Mockito.mock(Target.class);
+        Mockito.when(mockTarget.giveExperience()).thenReturn(10);
+        Mockito.when(mockTarget.isDead()).thenReturn(Boolean.TRUE);
+
+        Weapon
 
         Target target = new Target() {
             @Override
