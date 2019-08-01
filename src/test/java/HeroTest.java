@@ -28,50 +28,11 @@ public class HeroTest {
         Mockito.when(mockWeapon.getDurabilityPoints())
                 .thenReturn(DEFAULT_WEAPON_DURABILITY_POINTS);
 
-        Target target = new Target() {
 
+        Hero hero = new Hero(mockWeapon, HERO_NAME);
+        hero.attack(mockTarget);
 
-        hero.attack(target);
-        Assert.assertEquals(DEFAULT_EXPERIENCE, hero.getExperience());
+        Assert.assertEquals(DEFAULT_EXPERIENCE, hero.getExperience())
 
-
-        //            @Override
-//            public int getHealth() {
-//                return DEFAULT_TARGET_HEALTH;
-//            }
-//
-//            @Override
-//            public void takeAttack(int attackPoints) {
-//
-//            }
-//
-//            @Override
-//            public int giveExperience() {
-//                return DEFAULT_EXPERIENCE;
-//            }
-//
-//            @Override
-//            public boolean isDead() {
-//                return DEFAULT_IS_TARGET_DEAD;
-//            }
-//        };
-//
-//        Weapon weapon = new Weapon() {
-//            @Override
-//            public int getAttackPoints() {
-//                return DEFAULT_WEAPON_ATTACK_POINTS;
-//            }
-//
-//            @Override
-//            public int getDurabilityPoints() {
-//                return DEFAULT_WEAPON_DURABILITY_POINTS;
-//            }
-//
-//            @Override
-//            public void attack(Target target) {
-//
-//            }
-//        };
-            Hero hero = new Hero(weapon, HERO_NAME);
-        }
+    }
 }
